@@ -2,31 +2,6 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import LogoCarousel from "./LogoCarousel";
 
-const directoryLogos = [
-  {
-    src: "/lovable-uploads/8b91ac2c-6c6e-4fea-8f5d-04b2fe58234d.png",
-    alt: "AppSumo logo"
-  },
-  {
-    src: "/lovable-uploads/bf9f261f-e42d-4774-989e-7b8660284b2c.png",
-    alt: "AngelList logo",
-    className: "h-[35px] md:h-[50px]"
-  },
-  {
-    src: "/lovable-uploads/570afd4f-6e43-46e4-b881-9825716dbcb6.png",
-    alt: "Product Hunt logo"
-  },
-  {
-    src: "/lovable-uploads/4de6c93c-052c-40ad-81c8-6d85657e0bc0.png",
-    alt: "Devpost logo",
-    className: "h-[35px] md:h-[50px]"
-  },
-  {
-    src: "/lovable-uploads/ea51c39e-0a29-4be7-9b12-9fa7bed131d3.png",
-    alt: "GoodFirms logo"
-  }
-];
-
 const universityLogos = [
   {
     src: "/lovable-uploads/a1477e42-6388-4b31-80ba-94735ffd442e.png",
@@ -69,60 +44,39 @@ const Hero = () => {
   };
 
   return (
-    <main className="relative overflow-hidden bg-white">
+    <main className="relative overflow-hidden bg-background"> {/* Changed from bg-white */}
       <div className="mx-auto max-w-7xl px-6 lg:px-8 pt-32 pb-16 lg:pt-48 lg:pb-32">
         <div className="text-center">
-          <h1 className="text-5xl lg:text-7xl font-extrabold tracking-tight text-gray-900 px-4 lg:px-6">
+          <h1 className="text-5xl lg:text-7xl font-extrabold tracking-tight text-foreground dark:text-white px-4 lg:px-6"> {/* Added dark:text-white */}
             Welcome to LYNK
             <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-              Booking System
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600 drop-shadow-sm">
+            Booking System
             </span>
-            <span className="text-black"></span>
+            <span className="text-foreground dark:text-white"></span> {/* Changed from text-black */}
           </h1>
-          <p className="mt-6 text-xl leading-8 text-gray-600 max-w-3xl mx-auto px-4 lg:px-6">
-            A new way of managing your your spaces.
+          <p className="mt-6 text-xl leading-8 text-muted-foreground max-w-3xl mx-auto px-4 lg:px-6"> {/* Changed from text-gray-600 */}
+            A new way of managing your spaces.
           </p>
           
           <div className="mt-8">
             <Button 
               onClick={scrollToPricing}
               size="lg" 
-              className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-all duration-300 text-lg rounded-full px-10 py-8"
-            >
+              className="bg-primary hover:bg-primary/90 text-white shadow-lg hover:shadow-xl transition-all duration-300 text-lg rounded-full px-10 py-8 font-semibold"
+              >
               Get Started
               <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
             </Button>
           </div>
-
-          <div className="mt-16">
-            <div className="flex flex-wrap justify-center items-center gap-8 px-4">
-              {directoryLogos.map((logo, index) => (
-                <img
-                  key={index}
-                  src={logo.src}
-                  alt={logo.alt}
-                  className={`h-8 sm:h-10 w-auto object-contain ${logo.className || ""}`}
-                  loading="lazy"
-                  width="200"
-                  height="80"
-                />
-              ))}
-              <span className="text-lg font-medium text-gray-600">+250 more</span>
-            </div>
-          </div>
         </div>
       </div>
 
-      <section aria-label="Trusted by student founders" className="bg-white -mt-4">
+      <section aria-label="Trusted by student founders" className="bg-background -mt-4"> {/* Changed from bg-white */}
         <div className="mx-auto max-w-7xl px-6 lg:px-8 pb-12">
-          <p className="text-center text-lg font-medium text-gray-600 mb-6">
-            Used by student founders from
+          <p className="text-center text-lg font-medium text-muted-foreground mb-6"> {/* Changed from text-gray-600 */}
+            Made by NJIT students
           </p>
-          <LogoCarousel 
-            logos={universityLogos} 
-            title="University logos"
-          />
         </div>
       </section>
 

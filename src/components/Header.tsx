@@ -21,13 +21,8 @@ const Header = () => {
         <div className="flex h-16 items-center justify-between">
           <div className="flex-shrink-0 flex items-center space-x-2">
             <Link to="/" className="flex items-center space-x-2">
-              <img 
-                src="/lovable-uploads/a716f794-33b0-43ce-8afd-d4f019db039b.png" 
-                alt="Startup Launchpad Logo" 
-                className="w-8 h-8 rounded-full"
-              />
-              <span className="text-lg sm:text-xl font-semibold text-foreground">
-                Startup Launchpad
+            <span className="text-2xl sm:text-3xl font-bold text-foreground">
+            LYNK
               </span>
             </Link>
           </div>
@@ -38,7 +33,7 @@ const Header = () => {
               onClick={toggleDarkMode}
               className="p-2 rounded-md text-foreground hover:text-primary transition-colors"
             >
-              {isDarkMode ? <Sun className="h-6 w-6" /> : <Moon className="h-6 w-6" />}
+              {isDarkMode ? <Sun className="h-7 w-7" /> : <Moon className="h-7 w-7" />}
             </button>
 
             {/* Mobile menu button */}
@@ -58,12 +53,6 @@ const Header = () => {
             >
               How It Works
             </button>
-            <button
-              onClick={() => scrollToSection('pricing')}
-              className="text-sm font-medium text-foreground hover:text-primary transition-colors"
-            >
-              Plans
-            </button>
           </nav>
         </div>
 
@@ -76,12 +65,6 @@ const Header = () => {
                 className="block w-full text-left px-3 py-2 text-base font-medium text-foreground hover:text-primary transition-colors"
               >
                 How It Works
-              </button>
-              <button
-                onClick={() => scrollToSection('pricing')}
-                className="block w-full text-left px-3 py-2 text-base font-medium text-foreground hover:text-primary transition-colors"
-              >
-                Pricing
               </button>
             </div>
           </div>
